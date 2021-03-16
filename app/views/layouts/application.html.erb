@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <!-- <a href='https://www.freepik.com/vectors/logo'>Logo vector created by kreativkolors - www.freepik.com</a> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <script type="text/javascript">
+    window.logoUrl = "<%= image_url('logo.jpg') %>";
+  </script>
 </html>

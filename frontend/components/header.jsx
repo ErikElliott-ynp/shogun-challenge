@@ -3,7 +3,12 @@ import React from 'react';
 function Header () {
     return (
         <div className="header-main">
-            <h3>I'm a header</h3>
+            <a className="header-link" href="">
+                <div className="logo-wrapper">
+                    <img className="logo" src={window.logoUrl} alt=""/>
+                </div>
+                <h3 className="header-title">Shogun Challenge</h3>
+            </a>
         </div>
     )
 }
