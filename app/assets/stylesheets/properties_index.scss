@@ -10,13 +10,21 @@
 .property-item-main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     background-color: lightgray;
     width: 700px;
     height: 160px;
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, .40);
-    animation: slide-down 1s ease;
+    animation: slide-down 1.5s ease;
     margin: 20px 0;
+    transition: all 1s ease;
+    span {
+        text-transform: capitalize;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .matches-wrapper {
@@ -55,7 +63,8 @@
 }
 
 .match-header {
-    font-size: 34px;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 // from w3schools
 .arrow {
@@ -100,8 +109,40 @@
 }
 
 .home-img {
-    object-fit: cover;
-    width: 80px;
-    height: 120px
-    margin-top: 20px;
+    object-fit: contain;
+    width: 120px;
+    height: 120px;
+    margin: 22px 15px;
 }
+
+.address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-left-main {
+    display: flex;
+
+}
+
+.left-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.right-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.redfin-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.fa-prop {
+    font-size: 16px;
+}
+
