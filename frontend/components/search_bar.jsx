@@ -5,6 +5,7 @@ function SearchBar(props) {
     const [query, setQuery] =  useState("");
     const focusedCSS = isFocused ? "white-shadow" : "";
     function handleSubmit() {
+        if (!query) return;
         fetchSearch(query)
             .then( payload => {
                 props.setProperties({
@@ -18,6 +19,7 @@ function SearchBar(props) {
             handleSubmit(query);
         }
     }
+
     return (
         <div className="search-bar-main">
             <div className="search-img"></div>

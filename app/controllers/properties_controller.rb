@@ -2,6 +2,8 @@ require 'net/http'
 
 class PropertiesController < ApplicationController
     def search
+        
+
         street_suffixes = {
             "street" => "st",
             "road" => "rd",
