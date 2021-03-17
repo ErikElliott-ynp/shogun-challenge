@@ -1,0 +1,38 @@
+.property-index-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.property-item-main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgray;
+    width: 700px;
+    height: 90px;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .40);
+    animation: slide-down 1s ease;
+}
+
+.exact-matches-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-15px)
+    }
+
+    70%{
+        transform: translateY(1px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}

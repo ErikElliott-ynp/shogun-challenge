@@ -15,6 +15,7 @@ Property.destroy_all
 csv_text = File.read(Rails.root.join("redfin_2021-03-15-16-53-22.csv"))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 csv.each do |property|
+    # Skip bad data in CSV file which has no address 
     next if property["ADDRESS"].nil?
     property = property.to_hash
     property.each { |key, value| property[key] = value.downcase unless value.nil?}

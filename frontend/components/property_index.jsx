@@ -1,25 +1,19 @@
 import React from 'react';
+import PropertyIndexItem from './property_index_item';
 
 function PropertyIndex ({matchingProperties}) {
-    console.log(matchingProperties)
-    if (!matchingProperties.length) return null;
+    const matches = matchingProperties.map( property => {
+        return <PropertyIndexItem key={property.id} property={property} />
+    })
     return (
         <div className="property-index-main">
-            <div>
-                <span>{matchingProperties[0].address}</span>
-                <span>{matchingProperties[0].price}</span>
-                <span>{matchingProperties[0].beds}</span>
-                <span>{matchingProperties[0].baths}</span>
+            <div className="exact-matches-main">
+                <h3 className="exact-match-header">Property Matches</h3>
+                {matches}
             </div>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
-            <li>HOUSE</li>
+            <div className="suggestions-main">
+                <h3>Here are similar properties you might be interested in</h3>
+            </div>
         </div>
     )
 }

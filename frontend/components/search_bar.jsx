@@ -1,13 +1,13 @@
 import React, {useReducer, useState} from 'react';
 import { fetchSearch } from '../util/api_util';
-function SearchBar (props) {
+function SearchBar(props) {
     const [isFocused, setIsFocused] = useState(false);
     const [query, setQuery] =  useState("");
     const focusedCSS = isFocused ? "white-shadow" : "";
     function handleSubmit() {
         fetchSearch(query)
             .then( payload => {
-                props.setMatchingProperties([payload.match]);
+                props.setMatchingProperties(payload.exactMatches);
             });
     }
     function handleEnter(e) {
@@ -30,6 +30,7 @@ function SearchBar (props) {
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyPress={handleEnter}
                         placeholder="Enter an Address in San Francisco"
+                        value={query}
                     />
                 </div>
                 <i onClick={handleSubmit} className="fas fa-search"></i>
