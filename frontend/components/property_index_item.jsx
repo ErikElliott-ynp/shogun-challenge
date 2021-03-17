@@ -3,6 +3,7 @@ import React from 'react'
 function PropertyIndexItem({property}) {
     return (
         <div className="property-item-main">
+            <img src={window.homeImg} className="home-img"/>
             <span>{property.address}</span>
             <span>{property.city}</span>
             <span>{property.state}</span>

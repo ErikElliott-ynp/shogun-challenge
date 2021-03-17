@@ -4,13 +4,15 @@ import SearchBar from './search_bar';
 import PropertyIndex from './property_index';
 
 function App () {
-    const [matchingProperties, setMatchingProperties] = useState([]);
-
+    const [properties, setProperties] = useState({
+        matching: [],
+        similar: []
+    });
     return (
         <div className="app-main">
             <Header />
-            <SearchBar setMatchingProperties={setMatchingProperties}/>
-            <PropertyIndex matchingProperties={matchingProperties}/>
+            <SearchBar setProperties={setProperties} />
+            <PropertyIndex properties={properties} />
         </div>
     )
 }

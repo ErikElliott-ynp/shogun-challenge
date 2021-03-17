@@ -7,7 +7,10 @@ function SearchBar(props) {
     function handleSubmit() {
         fetchSearch(query)
             .then( payload => {
-                props.setMatchingProperties(payload.exactMatches);
+                props.setProperties({
+                    matching: payload.exactMatches,
+                    similar: payload.similarMatches
+                });
             });
     }
     function handleEnter(e) {
