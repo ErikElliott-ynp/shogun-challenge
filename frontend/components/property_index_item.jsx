@@ -1,6 +1,10 @@
 import React from 'react'
 
 function PropertyIndexItem({property}) {
+    const squareFeet = property.squareFeet ? property.squareFeet : "-";
+    const beds = property.beds ? property.beds : "-";
+    const baths = property.baths ? property.baths : "-";
+
     return (
         <div className="property-item-main">
             <div className="item-left-main">
@@ -16,10 +20,11 @@ function PropertyIndexItem({property}) {
             </div>
             <div className="right-item-info">
                 <div className="property-state">
-                    <span>Beds: {property.beds} <i className="fas fa-prop fa-bed"></i></span>
-                    <span>Baths: {property.baths} <i className="fas fa-bath"></i></span>
-                    <br/>
-                    <span>Sq Ft: {property.squareFeet}</span>
+                    <div className="bed-bath-wrapper">
+                        <span>Beds: {beds} <i className="fas fa-prop fa-bed"></i></span>
+                        <span>Baths: {baths} <i className="fas fa-prop fa-bath"></i></span>
+                    </div>
+                    <span>Sq Ft: {squareFeet}</span>
                 </div>
                 <a href={property.url} target="_blank" className="redfin-link">Wanna Know More?</a>
             </div>

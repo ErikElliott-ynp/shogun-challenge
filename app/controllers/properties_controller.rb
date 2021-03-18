@@ -2,8 +2,6 @@ require 'net/http'
 
 class PropertiesController < ApplicationController
     def search
-        
-
         street_suffixes = {
             "street" => "st",
             "road" => "rd",
@@ -12,7 +10,11 @@ class PropertiesController < ApplicationController
             "place" => "pl",
             "court" => "ct",
             "terrace" => "ter",
-            "drive" => "dr"
+            "drive" => "dr",
+            "st." => "st",
+            "dr." => "dr",
+            "rd." => "rd",
+            "ct." => "ct"
         }
 
         query_array = params[:query].downcase.split
@@ -27,7 +29,10 @@ class PropertiesController < ApplicationController
         if @exact_properties.length > 0
             @similar_properties = Property.where(beds: @exact_properties[0].beds).where(postal_code: @exact_properties[0].postal_code)
         else
-            @similar_properties = Property.where("address LIKE ?", "%#{query_array[0]}%")
+            @similar_properties = Property.where("address LIKE ?", "%#{query_array[0]}%").limit(5)
+            if @similar_properties.length == 0
+                @similar_properties = Property.all.sample(5) 
+            end
         end
 
         render :search

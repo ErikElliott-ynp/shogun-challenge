@@ -7,7 +7,8 @@ import Footer from "./footer";
 function App () {
     const [properties, setProperties] = useState({
         matching: [],
-        similar: []
+        similar: [],
+        hasSearched: false
     });
     return (
         <div className="app-main">

@@ -10,7 +10,8 @@ function SearchBar(props) {
             .then( payload => {
                 props.setProperties({
                     matching: payload.exactMatches,
-                    similar: payload.similarMatches
+                    similar: payload.similarMatches,
+                    hasSearched: true
                 });
             });
     }
@@ -34,6 +35,7 @@ function SearchBar(props) {
                         type="text" 
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyPress={handleEnter}
+                        maxLength="50"
                         placeholder="Enter an Address in San Francisco"
                         value={query}
                     />
