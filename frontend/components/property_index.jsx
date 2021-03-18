@@ -19,9 +19,10 @@ function PropertyIndex ({properties}) {
     const anchorEl = useRef(null);
     const hideArrow = matchingLength || properties.similar.length ? "" : "hidden";
     const similarHeaderHidden = properties.similar.length ? "" : "hidden";
-    const noResultsText = properties.hasSearched && !matchingLength ? 
-            <h4 className="no-results">Sorry! We found no exact matches</h4> :
-            null;
+    const noResultsText = properties.hasSearched ? 
+            (!matchingLength ? <h4 className="no-results">Sorry! We found no matches</h4>: null) :
+            <h4>Please make your first search above</h4>;
+            
     const pageForward = () => {
         if (currentPage >= matchingLength - propertiesPerPage) return;
         setCurrentPage((prevPage) => {
