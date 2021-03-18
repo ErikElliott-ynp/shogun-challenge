@@ -112,10 +112,11 @@
 }
 
 .home-img {
-    object-fit: contain;
+    object-fit: cover;
     width: 120px;
     height: 120px;
     margin: 22px 15px;
+    border-radius: 5px;
 }
 
 .address {

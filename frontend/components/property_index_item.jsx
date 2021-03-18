@@ -1,14 +1,25 @@
 import React from 'react'
 
+
 function PropertyIndexItem({property}) {
+    const PROPERTY_IMAGE_URLS = {
+        "condo/co-op": window.condo,
+        "single family residential": window.singleFamily,
+        "multi-family (5+ unit)": window.multiFamilyFivePlus,
+        "multi-family (2-4 unit)": window.multiFamily,
+        "townhouse": window.townHome
+    };
     const squareFeet = property.squareFeet ? property.squareFeet : "-";
     const beds = property.beds ? property.beds : "-";
     const baths = property.baths ? property.baths : "-";
 
+    let imgUrl = window.homeImg;
+    if (PROPERTY_IMAGE_URLS[property.propertyType]) imgUrl = PROPERTY_IMAGE_URLS[property.propertyType];
+
     return (
         <div className="property-item-main">
             <div className="item-left-main">
-                <img src={window.homeImg} className="home-img"/>
+                <img loading="lazy" src={imgUrl} className="home-img"/>
                 <div className="left-item-info">
                     <div className="address">
                         <span>{property.address}</span>

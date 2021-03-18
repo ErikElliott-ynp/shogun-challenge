@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Please have 
++ Rails 5.2.3
++ PostgreSQL
++ Node
 
-Things you may want to cover:
+#### To setup please run
++ `bundle install`
++ `npm i`
++ `rails db:setup`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### To test in browser run
++ `rails s` in terminal at the project root
++ `npm start` in a separate terminal tab at the project root
++ open localhost in your favorite browser
