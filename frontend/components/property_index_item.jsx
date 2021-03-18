@@ -14,6 +14,8 @@ function PropertyIndexItem({property}) {
                         <span>{property.address}</span>
                         <br/>
                         <span>{property.city}, {property.state} {property.postalCode}</span>
+                        <br/>
+                        <span className="property-type">{property.propertyType}</span>
                     </div>
                     <span style={{ color: "green" }}>$ {property.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
                 </div>
@@ -26,7 +28,7 @@ function PropertyIndexItem({property}) {
                     </div>
                     <span>Sq Ft: {squareFeet}</span>
                 </div>
-                <a href={property.url} target="_blank" className="redfin-link">Wanna Know More?</a>
+                <a href={property.url} target="_blank" className="redfin-link">Want to Know More?</a>
             </div>
         </div>
     )

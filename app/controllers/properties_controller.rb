@@ -27,7 +27,10 @@ class PropertiesController < ApplicationController
         query = query_array.join(" ")
         @exact_properties = Property.where("address LIKE ?", "%#{query}%")
         if @exact_properties.length > 0
-            @similar_properties = Property.where(beds: @exact_properties[0].beds).where(postal_code: @exact_properties[0].postal_code)
+            @similar_properties = Property
+                                    .where(beds: @exact_properties[0].beds)
+                                    .where(postal_code: @exact_properties[0].postal_code)
+                                    .limit(5)
         else
             @similar_properties = Property.where("address LIKE ?", "%#{query_array[0]}%").limit(5)
             if @similar_properties.length == 0
