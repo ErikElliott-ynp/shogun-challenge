@@ -16,8 +16,8 @@ function App () {
             <Header />
             <SearchBar setProperties={setProperties} />
             <PropertyIndex properties={properties} />
-            <Footer />
             <ScrollToTop />
+            <Footer />
         </div>
     )
 }

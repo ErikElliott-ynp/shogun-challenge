@@ -4,9 +4,11 @@ import PropertyIndexItem from './property_index_item';
 function PropertyIndex ({properties}) {
     const propertiesPerPage = 7;
     const [currentPage, setCurrentPage] = useState(0);
+
     useEffect(() => {
         setCurrentPage(0);
-    }, [properties.matching.length])
+    }, [properties.matching.length]);
+    
     const propertiesOnCurrentPage = properties.matching.slice(currentPage, currentPage + propertiesPerPage);
     const matchingProperties = propertiesOnCurrentPage.map( property => {
         return <PropertyIndexItem key={property.id} property={property} />
