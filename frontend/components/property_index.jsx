@@ -55,7 +55,7 @@ function PropertyIndex ({properties}) {
                 <h3 ref={anchorEl} className="match-header">Search Results</h3>
                 {noResultsText}
                 {matchingProperties}
-                <div className={`page-btns ${buttonsHidden}`}>
+                <div className={`page-btns-wrapper ${buttonsHidden}`}>
                     <div
                         onClick={pageBack}
                         className={`paginate-btn ${previousDisabled}`}

@@ -180,7 +180,7 @@
     }
 }
 
-.page-btns {
+.page-btns-wrapper {
     display: flex;
     margin-bottom: 8px;
 }
@@ -197,6 +197,7 @@
     margin: 0 7px;
     &:hover {
         background-color: rgb(7, 55, 247);
+        text-decoration: underline;
     }
 }
 
@@ -210,6 +211,7 @@
     &:hover {
         background-color: gray;
         cursor:not-allowed;
+        text-decoration: none;
     }
 }
 
