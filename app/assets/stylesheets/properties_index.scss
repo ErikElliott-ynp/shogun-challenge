@@ -19,7 +19,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, .40);
     animation: slide-down 1.5s ease;
     margin: 20px 0;
-    transition: all 1.3s ease;
+    transition: all .4s ease;
     span {
         text-transform: capitalize;
         font-size: 18px;
@@ -150,7 +150,7 @@
 }
 
 .redfin-link {
-    color: inherit;
+    color: rgb(17, 98, 204);
     text-decoration: underline;
     transition: transform .3s ease;
     &:hover {

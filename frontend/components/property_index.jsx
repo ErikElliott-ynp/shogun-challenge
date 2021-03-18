@@ -58,7 +58,6 @@ function PropertyIndex ({properties}) {
                 <div className={`page-btns ${buttonsHidden}`}>
                     <div
                         onClick={pageBack}
-                        disabled={currentPage ? false : true}
                         className={`paginate-btn ${previousDisabled}`}
                     >
                         View Previous
