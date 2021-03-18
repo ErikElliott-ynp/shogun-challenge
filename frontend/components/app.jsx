@@ -3,6 +3,7 @@ import Header from './header';
 import SearchBar from './search_bar';
 import PropertyIndex from './property_index';
 import Footer from "./footer";
+import ScrollToTop from "./scroll_to_top";
 
 function App () {
     const [properties, setProperties] = useState({
@@ -16,6 +17,7 @@ function App () {
             <SearchBar setProperties={setProperties} />
             <PropertyIndex properties={properties} />
             <Footer />
+            <ScrollToTop />
         </div>
     )
 }

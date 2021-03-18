@@ -10,3 +10,16 @@
         margin: 15px 30px;
     }
 }
+
+.scroll-to-top-main {
+    background-color: aliceblue;
+    padding: 15px 25px;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
