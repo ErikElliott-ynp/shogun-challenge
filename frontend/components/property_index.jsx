@@ -44,7 +44,7 @@ function PropertyIndex ({properties}) {
     const previousDisabled = currentPage ? "" : "gray";
     const buttonsHidden = matchingLength ? "" : "hidden";
     const moreDisabled = currentPage + propertiesPerPage >= matchingLength ? "gray" : "";
-
+    const extraPropertyText = matchingLength ? "similar" : "";
     return (
         <div className="property-index-main">
             <div className={`arrow-wrapper ${hideArrow}`}>
@@ -68,7 +68,7 @@ function PropertyIndex ({properties}) {
                 </div>
             </div>
             <div className={`matches-wrapper ${similarHeaderHidden}`}>
-                <h3 className="match-header">What about these similar Properties?</h3>
+                <h3 className="match-header">What about these {extraPropertyText} Properties?</h3>
                 {similarProperties}
             </div>
         </div>
