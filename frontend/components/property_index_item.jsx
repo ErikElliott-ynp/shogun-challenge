@@ -1,20 +1,14 @@
 import React from 'react';
-
+import { PROPERTY_IMAGE_URLS } from "../util/constants";
 
 function PropertyIndexItem({property, resultNumber}) {
-    const PROPERTY_IMAGE_URLS = {
-        "condo/co-op": window.condo,
-        "single family residential": window.singleFamily,
-        "multi-family (5+ unit)": window.multiFamilyFivePlus,
-        "multi-family (2-4 unit)": window.multiFamily,
-        "townhouse": window.townHome
-    };
-    
+    Object.freeze(PROPERTY_IMAGE_URLS);
+
     const squareFeet = property.squareFeet ? property.squareFeet : "-";
     const beds = property.beds ? property.beds : "-";
     const baths = property.baths ? property.baths : "-";
-
     let imgUrl = window.homeImg;
+    // Reassign the default home image for different property types
     if (PROPERTY_IMAGE_URLS[property.propertyType]) imgUrl = PROPERTY_IMAGE_URLS[property.propertyType];
 
     return (
