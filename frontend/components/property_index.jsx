@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import PropertyIndexItem from './property_index_item';
 
 function PropertyIndex ({properties}) {
-    // Paginate here in the Component instead of in the backend due to small data set
+    // Paginate here in the Component instead of in the backend due to small data set and to try pagination in React
     const propertiesPerPage = 7;
     const [currentPage, setCurrentPage] = useState(0);
     // reset pagination on new search
