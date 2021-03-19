@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function PropertyIndexItem({property}) {
+function PropertyIndexItem({property, resultNumber}) {
     const PROPERTY_IMAGE_URLS = {
         "condo/co-op": window.condo,
         "single family residential": window.singleFamily,
@@ -41,6 +41,7 @@ function PropertyIndexItem({property}) {
                 </div>
                 <a href={property.url} target="_blank" className="redfin-link">Want to Know More?</a>
             </div>
+            <span className="item-result-number">{resultNumber}</span>
         </div>
     )
 }

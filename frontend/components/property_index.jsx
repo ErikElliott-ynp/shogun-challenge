@@ -10,11 +10,15 @@ function PropertyIndex ({properties}) {
     }, [properties.matching.length]);
     
     const propertiesOnCurrentPage = properties.matching.slice(currentPage, currentPage + propertiesPerPage);
-    const matchingProperties = propertiesOnCurrentPage.map( property => {
-        return <PropertyIndexItem key={property.id} property={property} />
+    const matchingProperties = propertiesOnCurrentPage.map( (property, i) => {
+        return <PropertyIndexItem 
+                    key={property.id}
+                    resultNumber={i + 1 + currentPage}
+                    property={property} 
+                />
     });
-    const similarProperties = properties.similar.map( property => {
-        return <PropertyIndexItem key={property.id} property={property} />
+    const similarProperties = properties.similar.map( (property, i) => {
+        return <PropertyIndexItem key={property.id} resultNumber={i+1} property={property} />
     });
     const matchingLength = properties.matching.length;
     
