@@ -4,7 +4,9 @@ function SearchBar(props) {
     const [isFocused, setIsFocused] = useState(false);
     const [query, setQuery] =  useState("");
     const focusedCSS = isFocused ? "white-shadow" : "";
+
     function handleSubmit() {
+        // Prevent empty string queries
         if (!query) return;
         fetchSearch(query)
             .then( payload => {
@@ -15,6 +17,7 @@ function SearchBar(props) {
                 });
             });
     }
+
     function handleEnter(e) {
         if (e.key === "Enter") {
             handleSubmit(query);

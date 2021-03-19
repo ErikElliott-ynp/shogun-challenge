@@ -2,9 +2,10 @@ import React, {useState, useRef, useEffect} from 'react';
 import PropertyIndexItem from './property_index_item';
 
 function PropertyIndex ({properties}) {
+    // Paginate here in the Component instead of in the backend due to small data set
     const propertiesPerPage = 7;
     const [currentPage, setCurrentPage] = useState(0);
-
+    // reset pagination on new search
     useEffect(() => {
         setCurrentPage(0);
     }, [properties.matching.length]);
@@ -21,7 +22,7 @@ function PropertyIndex ({properties}) {
         return <PropertyIndexItem key={property.id} resultNumber={i+1} property={property} />
     });
     const matchingLength = properties.matching.length;
-    
+    // use this ref scroll up on page change
     const anchorEl = useRef(null);
     const hideArrow = matchingLength || properties.similar.length ? "" : "hidden";
     const similarHeaderHidden = properties.similar.length ? "" : "hidden";
@@ -30,6 +31,7 @@ function PropertyIndex ({properties}) {
             <h4>Please make your first search above</h4>;
             
     const pageForward = () => {
+        // Ensure we don't run off the end of the array
         if (currentPage >= matchingLength - propertiesPerPage) return;
         setCurrentPage((prevPage) => {
             const newPage = prevPage + propertiesPerPage;
@@ -39,6 +41,7 @@ function PropertyIndex ({properties}) {
     };
     const pageBack = () => {
         setCurrentPage((prevPage) => {
+            // Reset back to 0 before going negative
             const newPage = prevPage - propertiesPerPage >= 0 ? prevPage - propertiesPerPage : 0;
             return newPage;
         });

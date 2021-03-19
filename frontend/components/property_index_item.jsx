@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 function PropertyIndexItem({property, resultNumber}) {
@@ -9,6 +9,7 @@ function PropertyIndexItem({property, resultNumber}) {
         "multi-family (2-4 unit)": window.multiFamily,
         "townhouse": window.townHome
     };
+    
     const squareFeet = property.squareFeet ? property.squareFeet : "-";
     const beds = property.beds ? property.beds : "-";
     const baths = property.baths ? property.baths : "-";
@@ -28,6 +29,7 @@ function PropertyIndexItem({property, resultNumber}) {
                         <br/>
                         <span className="property-type">{property.propertyType}</span>
                     </div>
+                    {/* Add commas to the property price */}
                     <span style={{ color: "green" }}>$ {property.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
                 </div>
             </div>
